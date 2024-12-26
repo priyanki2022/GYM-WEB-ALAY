@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Home</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            text-decoration: none;
+            list-style: none;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        nav {
+            background: #000000;
+            height: 80px;
+            width: 100%;
+        }
+        
+        label.logo {
+            color: white;
+            font-size: 35px;
+            line-height: 80px;
+            padding: 10px 0px 0px 75px;
+            ;
+            font-weight: bold;
+            float: left;
+        }
+        
+        nav ul {
+            float: left;
+            margin-right: 20px;
+        }
+        
+        nav ul li {
+            display: inline-block;
+            line-height: 80px;
+            margin: 0 5px;
+        }
+        
+        nav ul li a {
+            color: white;
+            font-size: 17px;
+            padding: 7px 13px;
+            border-radius: 3px;
+            text-transform: uppercase;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bolder;
+        }
+        
+        a.active,
+        a:hover {
+            color: rgb(255, 94, 94);
+            text-decoration: underline;
+            font-size: 17px;
+        }
+        
+        .checkbtn {
+            font-size: 30px;
+            color: white;
+            float: right;
+            line-height: 80px;
+            margin-right: 40px;
+            cursor: pointer;
+            display: none;
+        }
+        
+        #check {
+            display: none;
+        }
+        
+        .gredient1 {
+            background-image: linear-gradient(to left, #c33764, #1d2671);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            padding-bottom: 300px;
+            opacity: 200%;
+        }
+        
+        .grt {
+            text-align: center;
+            position: absolute;
+            top: 10px;
+            top: 35%;
+            left: 50%;
+            padding-right: 0px;
+            transform: translate(-50%, -50%);
+        }
+        
+        .map {
+            margin-top: 70px;
+            margin-left: 70px;
+            background-color: lightgrey;
+            width: 700px;
+            border: 1px solid rgb(0, 0, 0);
+        }
+        
+        .ad {
+            display: flex;
+            margin-top: 30px;
+            position: relative;
+        }
+        
+        .add {
+            line-height: 1.4;
+            padding: 14 px;
+            padding-left: 100px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18px;
+        }
+        
+        .form {
+            line-height: 2.4;
+            font-size: 25px;
+            min-height: 50px;
+            padding: 2px 14px;
+            border-radius: 5px;
+            margin-left: 500px;
+        }
+        
+        input {
+            height: 40px;
+        }
+        
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 15px;
+            width: 505px;
+        }
+        
+        textarea {
+            width: 500px;
+            height: 10em;
+        }
+        
+        form input {
+            width: 500px;
+        }
+        
+        @media (max-width: 952px) {
+            .add h1 {
+                text-align: center;
+            }
+            form h2 {
+                text-align: center;
+                margin-left: 50%;
+            }
+            form input {
+                width: 100%;
+            }
+            .add {
+                padding-left: 20px;
+            }
+            #pp {
+                margin-left: 20px;
+                display: none;
+            }
+            textarea {
+                width: 100%;
+                height: 10em;
+            }
+            .ad {
+                flex-direction: column;
+            }
+            .map {
+                margin-left: 3px;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            .map iframe {
+                width: 100%;
+                height: 400px;
+                object-fit: cover;
+            }
+            label.logo {
+                font-size: 30px;
+                padding-left: 50px;
+            }
+            nav ul li a {
+                font-size: 16px;
+            }
+            .button {
+                width: 50%
+            }
+            .form {
+                margin-left: 0px;
+            }
+            @media (max-width: 858px) {
+                .checkbtn {
+                    display: block;
+                }
+                ul {
+                    width: 100%;
+                    height: 100vh;
+                    position: absolute;
+                    background: #000000ad;
+                    top: 80px;
+                    left: -100%;
+                    text-align: center;
+                    transition: all .5s;
+                }
+                nav ul li {
+                    display: block;
+                    margin: 50px 0;
+                    line-height: 30px;
+                }
+                nav ul li a {
+                    font-size: 20px;
+                }
+                a:hover,
+                a.active {
+                    background: none;
+                    color: #0082e6;
+                }
+                #check:checked~ul {
+                    left: 0;
+                }
+            }
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        
+        .footer {
+            width: 100%;
+            /* position: fixed; */
+            bottom: 0;
+            left: 0;
+            background: #444;
+            color: white;
+            padding: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .footer .content {
+            padding: 20px 20px;
+        }
+        
+        .footer .content h2 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .footer .content h2::after {
+            content: "";
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            height: 2px;
+            width: 70px;
+            background: cornflowerblue;
+        }
+        
+        .footer .about {
+            flex-basis: 35%;
+        }
+        
+        .footer .about p {
+            text-align: justify;
+        }
+        
+        .footer .about .social {
+            width: 100%;
+            margin-top: 15px;
+            display: flex;
+            justify-content: start;
+        }
+        
+        .footer .about .social a {
+            margin-right: 20px;
+            width: 40px;
+            height: 40px;
+            background: cornflowerblue;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 50%;
+            transition: 0.2s;
+        }
+        
+        .footer .about .social a:hover {
+            background: #222;
+        }
+        
+        .footer .about .social a i {
+            font-size: 21px;
+            color: white;
+        }
+        
+        .footer .links {
+            flex-basis: 20%;
+        }
+        
+        .footer .links ul {
+            list-style: none;
+        }
+        
+        .footer .links ul li {
+            margin-top: 10px;
+        }
+        
+        .footer .links ul li a {
+            text-decoration: none;
+            color: white;
+        }
+        
+        .footer .links ul li a:hover {
+            color: rgb(98, 98, 231);
+        }
+        
+        .footer .newsletter {
+            flex-basis: 25%;
+        }
+        
+        .footer .newsletter p {
+            text-align: justify;
+            margin: 15px 0;
+            font-size: 16px;
+        }
+        
+        .footer .newsletter input {
+            width: 100%;
+            height: 35px;
+            border: 1px solid gray;
+            outline: none;
+            padding-left: 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        
+        .footer .newsletter button {
+            width: 150px;
+            padding: 5px;
+            font-size: 18px;
+            border: 1px solid gray;
+            background: cornflowerblue;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        
+        @media (max-width:950px) {
+            .footer .content {
+                flex-basis: 50%;
+                margin-bottom: 20px;
+                font-size: 15px;
+            }
+            .footer .links content {
+                flex-basis: 50%;
+                margin-bottom: 20px;
+            }
+        }
+        
+        @media (max-width:950px) {
+            .footer .content {
+                flex-basis: 100%;
+                margin-bottom: 20px;
+            }
+            .footer .newsletter button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i></label>
+        <label class="logo"> <a href="index.html"><img src="Images/logo the.png" style="border-radius: 50px; width: 50px; height: 50px;"></a></label>
+
+        <ul>
+            <li><a href="Membership.html" target="top">MEMBERSHIP</a> </li>
+            <li><a href="groupclass.html" target="self">GROUP CLASS</a></li>
+            <li><a href="PT.html" target="blank">PERSONAL TRAINING</a> </li>
+            <li>
+                <a href="Schedules.html" target="blank">SCHEDULES</a>
+            </li>
+            <li>
+                <a href="pricing.html" target="blank">PRICING</a>
+            </li>
+            <li><a href="location.html" target="blank">LOCATION</a></li>
+        </ul>
+    </nav>
+    <div class="gredient1">
+        <div class="grt" style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color: rgb(249, 249, 249);">
+            <h1> LOCATION </h1>
+            <p> Best in our area </p>
+        </div>
+    </div>
+    <div class="ad">
+        <div class="map">
+
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.192423480466!2d73.18368937539057!3d22.30856127968061!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395fcf5245c55145%3A0xe7a5aa9715543890!2sBaroda%20Institute%20of%20Technology%20%7C%7C%20Best%20Computer%20Institute%2C%20IT%20Institute%2C%20Computer%20Language%20Institute%2C%20Computer%20Education!5e0!3m2!1sen!2sin!4v1709277516404!5m2!1sen!2sin"
+                width="700" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <div class="add">
+            <h1>MASTER GYM</h1>
+            <p style=" color: rgb(87, 87, 87);"> <br>
+                <br><br>
+                <b>Address: </b> 203, Envato Labs, Behind Alis Steet, <br> Melbourne, Australia .12345 <br><br>
+
+                <b>Phone: </b> +91 123456789 <br>
+                <b> Mobile: </b> +91 123456789<br><br>
+
+                <b> Business Hours: </b> <br> <br> 6 am – 12 am Monday – Saturday <br> 6 am – 10 pm Sunday
+            </p>
+        </div>
+    </div>
+    <div id="pp">
+        <p style="border-bottom: 2px solid rgb(54, 54, 54); width: 80%; margin-top: 70px; margin-left: 150px;"></p><br>
+    </div>
+
+    <div class="form">
+        <h2 style="margin-left: 85px;">GET IN TOUCH!</h2>
+        <form action="master gym.html" autocomplete="off">
+            <label for="frame"></label>
+            <input type="text" id="name" placeholder=" Name" required style="font-size: 16px;  "> <br>
+
+
+            <label for="mail"></label>
+            <input type="email" id="mail" placeholder="Email" required style="font-size: 16px; "><br>
+
+            <p><textarea name="item3" cols="30" rows="10" placeholder="Message"></textarea></p>
+
+
+
+            <button class="button">
+                Join Now
+            </button><br>
+        </form>
+    </div><br>
+    <footer>
+        <div class="footer">
+            <div class="about content">
+                <h2 style="color:rgb(35, 168, 221) ;">ABOUT THE GYM</h2>
+                <p>New year,new you! Thanks for entering to win<br> a free one-year membership at master gym
+                    <br> We'll announce the winner on january 2nd! <br></p>
+                <div class="social">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-instagram"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-youtube-play"></i></a>
+                </div>
+            </div>
+            <div class="links content">
+
+                <h2 style="color:rgb(35, 168, 221) ;">CONTACT US</h2>
+                <!-- <ul> -->
+                <p>
+
+                    203, Envato Labs, <br> Behind Alis Steet, Melbourne, <br> Australia. – 123 456<br> Phone: +9101 2345 6789 <br> Email: info@mastergym.com <br>
+                </p>
+
+                <!-- </ul> -->
+            </div>
+            <div class="links content">
+
+                <h2 style="color:rgb(35, 168, 221) ;">OUR SERVICES</h2>
+
+                <p>Cardio & Conditioning</p>
+                <p>Bodybuilding Coach</p>
+                <p>Crossfit Coach</p>
+                <p>Yoga Coach</p>
+            </div>
+            <div class="newsletter content">
+
+                <h2 style="color:rgb(35, 168, 221) ;">OUR NEWSLETTER</h2>
+                <p>JOIN WAVES GYM NOW!</p>
+                <form action="#">
+                    <input type="email" placeholder="Email" required>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

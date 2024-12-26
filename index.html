@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Home</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            text-decoration: none;
+            list-style: none;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        nav {
+            background: #000000;
+            height: 80px;
+            width: 100%;
+        }
+        
+        label.logo {
+            color: white;
+            font-size: 35px;
+            line-height: 80px;
+            padding: 10px 0px 0px 75px;
+            ;
+            font-weight: bold;
+            float: left;
+        }
+        
+        nav ul {
+            float: left;
+            margin-right: 20px;
+        }
+        
+        nav ul li {
+            display: inline-block;
+            line-height: 80px;
+            margin: 0 5px;
+        }
+        
+        nav ul li a {
+            color: white;
+            font-size: 17px;
+            padding: 7px 13px;
+            border-radius: 3px;
+            text-transform: uppercase;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bolder;
+        }
+        
+        a.active,
+        a:hover {
+            color: rgb(255, 94, 94);
+            text-decoration: underline;
+            font-size: 17px;
+        }
+        
+        .checkbtn {
+            font-size: 30px;
+            color: white;
+            float: right;
+            line-height: 80px;
+            margin-right: 40px;
+            cursor: pointer;
+            display: none;
+        }
+        
+        #check {
+            display: none;
+        }
+        
+        .hero_section {
+            background-image: url(Images/gym.5.jpg);
+            min-height: 100vh;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .join {
+            padding-top: 3%;
+            text-align: center;
+            font-weight: bold;
+            /* font-family: Arial, Helvetica, sans-serif; */
+        }
+        
+        .join input {
+            font-style: normal;
+            background-color: #000000;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            -webkit-transition-duration: 0.4s;
+            /* Safari */
+            transition-duration: 0.4s;
+        }
+        
+        .join input:hover {
+            background-image: linear-gradient( to right, #00b7ff, #0295fe, #0acbf7, #2badb6);
+            box-shadow: 0 4px 4px 0 rgba(49, 196, 190, 0.75);
+        }
+        
+        .heading {
+            text-align: center;
+        }
+        
+        .secondpage {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            margin: 25px;
+            padding: 0px;
+            text-decoration: disc;
+            text-align: center;
+            justify-content: center;
+            background-color: none;
+        }
+        
+        .list ol {
+            /* background-color: #000000; */
+            color: #000000;
+            text-decoration: disc;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            float: left;
+            list-style: none;
+            background-color: none;
+        }
+        
+        .list h2 {
+            color: #000000;
+        }
+        
+        .paragrph2 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            margin-left: 100px;
+            padding: 42px;
+            border-left: 1px solid gray;
+            height: 550px;
+            position: none;
+            left: 50%;
+            /* margin-left: -3px; */
+            margin-top: 0;
+            display: inline-block;
+            background-color: none;
+        }
+        
+        @media (max-width: 952px) {
+            label.logo {
+                font-size: 30px;
+                padding-left: 50px;
+            }
+            nav ul li a {
+                font-size: 16px;
+            }
+            hr {
+                display: none;
+            }
+            .paragrph2 {
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                margin-left: 20px;
+                padding: 42px;
+                border-left: 1px solid gray;
+                height: 550px;
+                position: none;
+                left: 50%;
+                /* margin-left: -3px; */
+                margin-top: 0;
+                display: inline-block;
+                background-color: none;
+            }
+        }
+        
+        @media (max-width: 858px) {
+            .checkbtn {
+                display: block;
+            }
+            ul {
+                width: 100%;
+                height: 100vh;
+                position: absolute;
+                background: #000000ad;
+                top: 80px;
+                left: -100%;
+                text-align: center;
+                transition: all .5s;
+                z-index: 1;
+            }
+            nav ul li {
+                display: block;
+                margin: 50px 0;
+                line-height: 30px;
+            }
+            nav ul li a {
+                font-size: 20px;
+            }
+            a:hover,
+            a.active {
+                background: none;
+                color: #0082e6;
+            }
+            #check:checked~ul {
+                left: 0;
+            }
+        }
+        
+        section {
+            background: url(Images/gym.5.jpg) no-repeat;
+            background-size: cover;
+            height: calc(100vh - 100px);
+        }
+        
+        @media screen and (max-width: 468px) {
+            h2,
+            p {
+                font-size: 15px;
+            }
+            @media screen and (max-width: 468px) {
+                .hero_section {
+                    font-size: 15px;
+                    position: sticky;
+                }
+            }
+            @media all and (max-width:30em) {
+                a.join {
+                    display: block;
+                    margin: 0.2em auto;
+                }
+            }
+            .heading {
+                font-size: 16px;
+            }
+            h2,
+            p {
+                font-size: 1.0em;
+            }
+            .list,
+            .paragrph2 {
+                font-size: 16px;
+            }
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        
+        .footer {
+            width: 100%;
+            /* position: fixed; */
+            bottom: 0;
+            left: 0;
+            background: #444;
+            color: white;
+            padding: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .footer .content {
+            padding: 20px 20px;
+        }
+        
+        .footer .content h2 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .footer .content h2::after {
+            content: "";
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            height: 2px;
+            width: 70px;
+            background: rgb(15, 170, 231);
+        }
+        
+        .footer .about {
+            flex-basis: 35%;
+        }
+        
+        .footer .about p {
+            text-align: justify;
+        }
+        
+        .footer .about .social {
+            width: 100%;
+            margin-top: 15px;
+            display: flex;
+            justify-content: start;
+        }
+        
+        .footer .about .social a {
+            margin-right: 20px;
+            width: 40px;
+            height: 40px;
+            background: rgb(15, 170, 231);
+            line-height: 40px;
+            text-align: center;
+            border-radius: 50%;
+            transition: 0.2s;
+        }
+        
+        .footer .about .social a:hover {
+            background: #222;
+        }
+        
+        .footer .about .social a i {
+            font-size: 21px;
+            color: white;
+        }
+        
+        .footer .links {
+            flex-basis: 20%;
+        }
+        
+        .footer .links ul {
+            list-style: none;
+        }
+        
+        .footer .links ul li {
+            margin-top: 10px;
+        }
+        
+        .footer .links ul li a {
+            text-decoration: none;
+            color: white;
+        }
+        
+        .footer .links ul li a:hover {
+            color: rgb(98, 98, 231);
+        }
+        
+        .footer .newsletter {
+            flex-basis: 25%;
+        }
+        
+        .footer .newsletter p {
+            text-align: justify;
+            margin: 15px 0;
+            font-size: 16px;
+        }
+        
+        .footer .newsletter input {
+            width: 100%;
+            height: 35px;
+            border: 1px solid gray;
+            outline: none;
+            padding-left: 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        
+        .footer .newsletter button {
+            width: 150px;
+            padding: 5px;
+            font-size: 18px;
+            border: 1px solid gray;
+            background: rgb(15, 170, 231);
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        
+        @media (max-width:950px) {
+            .footer .content {
+                flex-basis: 50%;
+                margin-bottom: 20px;
+                font-size: 15px;
+            }
+            .footer .links content {
+                flex-basis: 50%;
+                margin-bottom: 20px;
+            }
+        }
+        
+        @media (max-width:950px) {
+            .footer .content {
+                flex-basis: 100%;
+                margin-bottom: 20px;
+            }
+            .footer .newsletter button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i></label>
+        <label class="logo"> <a href="index.html"><img src="Images/logo the.png" style="border-radius: 50px; width: 50px; height: 50px;"></a></label>
+
+        <ul>
+            <li><a href="Membership.html" target="top">MEMBERSHIP</a> </li>
+            <li><a href="groupclass.html" target="self">GROUP CLASS</a></li>
+            <li><a href="PT.html" target="blank">PERSONAL TRAINING</a> </li>
+            <li>
+                <a href="Schedules.html" target="blank">SCHEDULES</a>
+            </li>
+            <li>
+                <a href="pricing.html" target="blank">PRICING</a>
+            </li>
+            <li><a href="location.html" target="blank">LOCATION</a></li>
+        </ul>
+    </nav>
+    <section class="hero_section"></section>
+    <div class="join">
+        <h2>START YOUR FITNESS JOURNEY </h2>
+        <br>
+        <p>Open Daily From 06:00AM to 10:00PM</p>
+        <br>
+        <a href="Membership.html"><input type="button" value="JOIN NOW"></a>
+    </div>
+    <br>
+
+    <!-- //SECOND PAGE// -->
+    <div class="secondpage">
+        <div class="heading">
+            <h2>WELCOME FORWARD! <br></h2>
+            <p>Waves Gym, premier fitness gym in pune with internationally <br> bcertified personal trainers, is waiting for you! <br> We are offering you the chance to get fit the fun way with a Free Day Pass! <br> High octane, energetic music, and a fun,
+                motivating environment, <br> Waves Gym is your fitness destination!
+            </p><br></div>
+        <div class="list">
+            <ol>
+                <h2>OUR SERVICES FOR YOU <br> PUSH YOUR LIMITS FORWARD<br> WE OFFER TO YOU </h2>
+                <br>
+                <li> <a href="PT.html ">Internationally Certified Personal Trainers</a></li><br>
+                <li>Dedicated Personal Training Studio</li><br>
+                <li>1500 Sq Ft Open Air CrossFit Studio</li><br>
+                <li>Open 7 days from 6:00 AM to 10:00 PM</li><br>
+                <li>Convenient Location</li><br>
+                <li>Beginner-friendly Group Fitness Classes</li><br>
+                <li>Clean, Comfortable, Safe Environment</li><br>
+                <li>Book Your Favorite Classes,Track Your Workout & Diet Plan </li><br>
+                <li>Complimentary Valet Parking </li><br>
+            </ol>
+        </div>
+
+        <div class="paragrph2">
+
+            <h2> TAKE YOUR FITNESS TO THE NEXT <br> LEVEL WITH OUR CERTIFIED <br> PERSONAL TRAINERS. </h2>
+            <br>
+            <p> Our internationally certified gym trainers help accomplish your fitness<br> and weight loss goals, quicker. They aid in guiding you through a <br>balanced combination of cardio, aerobic exercise, strength, and weight<br> training with the
+                help of the latest training techniques, technology,<br> and high-end fitness equipment. Our personal gym trainers help you turn the <br> IMPOSSIBLE to I’M’POSSIBLE. <br><br> Our personal trainers customize and personalize gym workouts
+                as per <br> individual needs and requirements. Pair this up with their fully guided <br> nutrition program to attain the best results. <br><br> Waves Gym trainers are also accredited with Special Population Training. <br> They are specially
+                trained to cater to a wide variety of audiences. <br>
+            </p>
+        </div>
+    </div>
+    <footer>
+        <div class="footer">
+            <div class="about content">
+                <h2 style="color:rgb(35, 168, 221) ;">ABOUT THE GYM</h2>
+                <p>New year,new you! Thanks for entering to win<br> a free one-year membership at master gym
+                    <br> We'll announce the winner on january 2nd! <br></p>
+                <div class="social">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-instagram"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-youtube-play"></i></a>
+                </div>
+            </div>
+            <div class="links content">
+
+                <h2 style="color:rgb(35, 168, 221) ;">CONTACT US</h2>
+                <!-- <ul> -->
+                <p>
+
+                    203, Envato Labs, <br> Behind Alis Steet, Melbourne, <br> Australia. – 123 456<br> Phone: +9101 2345 6789 <br> Email: info@mastergym.com <br>
+                </p>
+
+                <!-- </ul> -->
+            </div>
+            <div class="links content">
+
+                <h2 style="color:rgb(35, 168, 221) ;">OUR SERVICES</h2>
+                <!-- <ul>
+                    <li><a href="#">Cardio & Conditioning</a></li>
+                    <li><a href="#">Bodybuilding Coach</a></li>
+                    <li><a href="#">Crossfit Coach</a></li>
+                    <li>
+                        <a href="#">Yoga Coach</a>
+                    </li>
+                </ul> -->
+                <p>Cardio & Conditioning</p>
+                <p>Bodybuilding Coach</p>
+                <p>Crossfit Coach</p>
+                <p>Yoga Coach</p>
+            </div>
+            <div class="newsletter content">
+
+                <h2 style="color:rgb(35, 168, 221) ;">OUR NEWSLETTER</h2>
+                <p>JOIN WAVES GYM NOW!</p>
+                <form action="#">
+                    <input type="email" placeholder="Email" required>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
